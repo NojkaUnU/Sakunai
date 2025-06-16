@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakunai10</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="app-title">Sakunai</div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Wyszukaj">
+            </div>
+            <ul class="nav-list">
+                <li id="nav-home" class="active"><i class="fas fa-home"></i> Home</li>
+                <li id="nav-queue"><i class="fas fa-list-alt"></i> Play queue</li>
+                <li id="nav-settings"><i class="fas fa-cog"></i> Settings</li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div id="home-view" class="content-view active">
+                <div class="main-header">
+                    <div class="main-title">Welcome to Sakunai!</div>
+                </div>
+                <div class="settings-section">
+                    <div class="section-header">Latest Version: 1.0.1</div>
+                    <div class="setting-item">
+                        <p>Changes made in this version:</p>
+                        <ul>
+                            <li>Fixed an issue with playing songs from a playlist after restarting the app.</li>
+                            <li>Fixed bugs related to Blob URL management.</li>
+                            <li>Improved dynamic accent color changing, eliminating security bugs.</li>
+                            <li>Added "Home" page with version information.</li>
+                            <li>General performance and stability improvements.</li>
+                        </ul>
+                        <p>Thanks for using!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="queue-view" class="content-view">
+                <div class="main-header">
+                    <div class="main-title">Play queue</div>
+                    <div class="header-actions">
+                        <button class="action-btn add-files-btn"><i class="fas fa-plus"></i> Add Files</button>
+                        <input type="file" id="file-input" accept="audio/mp3" multiple style="display: none;">
+                    </div>
+                </div>
+
+                <div class="queue-controls">
+                    <button id="clear-queue-btn" class="queue-btn"><i class="fas fa-eraser"></i> Clear</button>
+                    <button class="queue-btn add-to-btn"><i class="fas fa-plus"></i> Add To...</button>
+                </div>
+
+                <div class="queue-list">
+                    <div class="queue-item active-song" id="default-song">
+                        <div class="song-icon"><i class="fas fa-music"></i></div>
+                        <div class="song-details">
+                            <div class="song-title">Load Song...</div>
+                            <div class="song-meta">Unknown...</div>
+                        </div>
+                        <div class="song-duration">0:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="settings-view" class="content-view">
+                <div class="main-header">
+                    <div class="main-title">Settings</div>
+                </div>
+
+                <div class="settings-section">
+                    <div class="section-header">Style</div>
+                    <div class="setting-item">
+                        <label for="theme-select">Select Theme:</label>
+                        <div class="theme-options">
+                            <input type="radio" id="theme-dark" name="theme" value="dark" checked>
+                            <label for="theme-dark">Dark</label>
+                            <input type="radio" id="theme-light" name="theme" value="light">
+                            <label for="theme-light">Light</label>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <label>Accent Color:</label>
+                        <div class="accent-color-options">
+                            <input type="radio" id="accent-orange" name="accent-color" value="orange" data-color="orange" checked>
+                            <label for="accent-orange" class="color-preview orange-color"></label>
+                            
+                            <input type="radio" id="accent-blue" name="accent-color" value="blue" data-color="blue">
+                            <label for="accent-blue" class="color-preview blue-color"></label>
+
+                            <input type="radio" id="accent-green" name="accent-color" value="green" data-color="green">
+                            <label for="accent-green" class="color-preview green-color"></label>
+
+                            <input type="radio" id="accent-purple" name="accent-color" value="purple" data-color="purple">
+                            <label for="accent-purple" class="color-preview purple-color"></label>
+
+                            <input type="radio" id="accent-red" name="accent-color" value="red" data-color="red">
+                            <label for="accent-red" class="color-preview red-color"></label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <div class="section-header">Informations</div>
+                    <div class="setting-item">
+                        <p>Player Version: 1.0.1</p>
+                        <p>Sakunai Player 10</p>
+                        <p>SoraMelody© 2018-2025</p>
+                        <a href="https://discord.gg/6TCm23f3">Discord</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="player-bar">
+            <div class="progress-container-bottom">
+                <div class="progress-bar-bottom"></div>
+            </div>
+            <div class="player-controls-bottom">
+                <div class="current-time-bottom">0:00</div>
+                <div class="song-info-bottom">
+                    <i class="fas fa-music"></i>
+                    <span class="song-title-bottom">Load Song...</span>
+                </div>
+                <div class="main-player-buttons">
+                    <button class="player-btn"><i class="fas fa-random"></i></button>
+                    <button class="player-btn"><i class="fas fa-backward"></i></button>
+                    <button id="play-pause-btn-bottom" class="player-btn main-play-pause"><i class="fas fa-play"></i></button>
+                    <button class="player-btn"><i class="fas fa-forward"></i></button>
+                    <button class="player-btn"><i class="fas fa-sync-alt"></i></button>
+                </div>
+                <div class="volume-controls-bottom">
+                    <button class="player-btn volume-icon-btn"><i class="fas fa-volume-up"></i></button>
+                    <input type="range" id="volume-slider-bottom" min="0" max="1" step="0.01" value="1">
+                </div>
+                <div class="duration-bottom">0:00</div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="audio-player"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
