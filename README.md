@@ -1,5 +1,8 @@
 # Sakunai!
 Music Player For Windows 10!
-Advanced Music Player for Windows 10 that support custom themes via css (soon)!
+## custom themes via css (soon)!
+we will soon add this feature
+## Support
+https://discord.gg/JaJBZ7w5Qt
 Made with html, css, js
 converted to exe via electron!
