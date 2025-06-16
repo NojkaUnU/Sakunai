@@ -1,5 +1,5 @@
 # Sakunai!
-The "Music Player" project is a lightweight multimedia player built using HTML, CSS, and JavaScript, styled to resemble the Windows 10 Media Player interface. The application offers basic music playback functionalities, queue management, and UI personalization through themes and accent colors.
+The "Sakunai" project is a lightweight multimedia player built using HTML, CSS, and JavaScript, styled to resemble the Windows 10 Media Player interface. The application offers basic music playback functionalities, queue management, and UI personalization through themes and accent colors.
 ## Features
 * Modern Interface: Clean and intuitive design inspired by Windows 10 Media Player.
 * Audio Playback: Supports MP3 files with full playback control (play/pause, next/previous track, volume adjustment, progress bar).
